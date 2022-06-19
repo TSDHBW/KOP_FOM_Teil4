@@ -132,7 +132,23 @@ public class Rezeptverwaltung {
 
     public BasisRezept getRezept(String rezeptname, String rezeptart){
 
-        // zu implmeneiteren
+        boolean rezeptEnthalten = false;
+        for (int i = 0; i < rezepte.length; i++){
+
+            if (rezepte[i] != null){
+
+                if (rezepte[i].getName().equals(rezeptname) && rezepte[i].getTyp().equals(rezeptart)){
+
+                    System.out.println("Rezept gefunden");
+                    rezeptEnthalten = true;
+                    return rezepte[i];
+
+                }
+            }
+        }
+        if (rezeptEnthalten == false){
+            System.out.println("Rezept nicht enthalten");
+        }
         return null;
     }
 
