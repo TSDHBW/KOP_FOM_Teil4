@@ -15,6 +15,7 @@ public class MVCController {
         //Erzeugung des Datenmodells durch ein Objekt der Klasse MVCModel
         this.model = new MVCModel();
 
+
         testeRezeptverwaltung();
 
     }
