@@ -1,4 +1,4 @@
-public class FleischGericht extends BasisRezeptEssen implements Verkaufspreis {
+public class FleischGericht extends BasisRezeptEssen  {
 
     private String fleischsorte;
     private int zielKerntemperatur;
@@ -43,20 +43,4 @@ public class FleischGericht extends BasisRezeptEssen implements Verkaufspreis {
         this.zubereitungstemperatur = zubereitungstemperatur;
     }
 
-    @Override
-    public double getAufschlag() {
-        return 5.0;
-    }
-
-    @Override
-    public double ermittelVerkaufspreis() {
-        double verkaufspreis = 0.0;
-        for (int i = 0; i < getZutaten().length; i++){
-            if (getZutaten()[i] != null){
-                verkaufspreis = verkaufspreis + getZutaten()[i].getPreis();
-            }
-        }
-        verkaufspreis = verkaufspreis + getAufschlag() + BASISPREIS;
-        return verkaufspreis;
-    }
 }
